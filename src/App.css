@@ -1,47 +1,115 @@
+/* Final Fully Centered and Responsive Mood Tracker App CSS */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .app {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
   text-align: center;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  margin-left: 400px;
-  background-color: rgb(243, 192, 52);
-  color: rgb(0, 0, 0);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.mood-selector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
 }
 
 .mood-selector button {
-  margin: 5px;
-  padding: 10px 20px;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 20px;
   font-size: 16px;
   cursor: pointer;
-  color: aqua;
-  background-color: #a75c07;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: 0.3s;
+  min-width: 120px;
 }
 
 .mood-selector button:hover {
-  background-color: #040405;
-  transform: translateY(-3px);
-  border: 1px solid #007bff;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  transform: scale(1.05);
 }
 
-.mood-history ul {
-  list-style-type: none;
-  padding: 0;
+.mood-history,
+.mood-stories {
+  margin-top: 20px;
 }
 
+.mood-history ul,
 .mood-stories ul {
   list-style-type: none;
   padding: 0;
-  text-align: left;
-  max-width: 500px;
-  margin: 20px auto;
+  margin: 0;
 }
 
 .mood-stories li {
-  background: #7ef0f8;
-  padding: 10px;
+  background: #f0f0f0;
+  padding: 12px 18px;
   margin: 10px 0;
-  border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.mood-stories li:hover {
+  transform: translateY(-3px);
+}
+
+/* Responsive Settings */
+@media (max-width: 768px) {
+  .app {
+    padding: 20px 15px;
+    max-width: 90%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .mood-selector {
+    gap: 10px;
+  }
+
+  .mood-selector button {
+    min-width: 100px;
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mood-selector {
+    flex-direction: column;
+  }
+
+  .mood-selector button {
+    width: 100%;
+  }
+
+  .mood-stories li {
+    font-size: 14px;
+  }
 }
